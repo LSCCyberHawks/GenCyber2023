@@ -1,0 +1,8 @@
+Thursday Challenge
+Using the ChallengeHeader.txt file from the Thursday Github folder, solve the following two challenges.
+
+1) If you were to reply to this email, what email address would it actually go to?
+
+2) It seems there's a hidden "message" somewhere..."ID"on't know how to decode it...do you?
+
+Find the answers to both and bring proof to Matt in the meeting room again. Good Luck!
